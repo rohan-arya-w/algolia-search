@@ -14,10 +14,8 @@ class AlgoliaSearch extends React.Component{
 
     search(key){
         console.log(key)
-        fetch('https://hn.algolia.com/api/v1/search?query='+key)
-        .then((data)=>{
-            data.json().
-            then((resp)=>{
+        fetch('https://hn.algolia.com/api/v1/search?query='+key).then((data)=>{
+            data.json().then((resp)=>{
                 this.setState({hits:resp.hits})
                 console.log(resp.hits.length)    
             })
@@ -33,7 +31,7 @@ class AlgoliaSearch extends React.Component{
 
             <div className="Search-bar">
                 <div id="logo">
-                    <img src={'https://d3nb9u6x572n0.cloudfront.net/packs/media/images/logo-hn-search-a822432b.png'}/>
+                    <img alt="gg" src={'https://d3nb9u6x572n0.cloudfront.net/packs/media/images/logo-hn-search-a822432b.png'}/>
                 </div >
                 <div id="label-holder">
                 <label>Search <br/>Hacker News</label>
